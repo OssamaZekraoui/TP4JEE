@@ -13,7 +13,7 @@
 
 ![screencapture-localhost-4200-products-2023-12-12-19_03_07](https://github.com/OssamaZekraoui/TP4JEE/assets/64346410/74fad931-d54a-406c-b637-7c851d3e68ce)
 
-![Uploading screencapture-localhost-8500-ui-dc1-services-config-server-in![cap2](https://github.com/OssamaZekraoui/TP4JEE/assets/64346410/6f936522-8325-4449-b149-fa1d46dfc78f)
+![screencapture-localhost-8500-ui-dc1-services-config-server-in![cap2](https://github.com/OssamaZekraoui/TP4JEE/assets/64346410/6f936522-8325-4449-b149-fa1d46dfc78f)
 stances-ZEKRAOUI-config-server-8888-health-checks-2023-12-12-19_01_32.png…]()
 
 
