@@ -5,8 +5,8 @@ import org.sid.orderservice.entities.ProductItem;
 import org.sid.orderservice.enums.OrderStatus;
 import org.sid.orderservice.model.Customer;
 import org.sid.orderservice.model.Product;
-import org.sid.orderservice.repository.OrderRepository;
-import org.sid.orderservice.repository.ProductItemRepository;
+import org.sid.orderservice.repositories.OrderRepository;
+import org.sid.orderservice.repositories.ProductItemRepository;
 import org.sid.orderservice.services.CustomerRestClientService;
 import org.sid.orderservice.services.InventoryRestClientService;
 import org.springframework.boot.CommandLineRunner;
@@ -22,7 +22,6 @@ import java.util.Random;
 
 @SpringBootApplication
 @EnableFeignClients
-
 public class OrderServiceApplication {
 
 	public static void main(String[] args) {
@@ -43,7 +42,7 @@ public class OrderServiceApplication {
 			for (int i = 0; i <20 ; i++) {
 				Order order=Order.builder()
 						.customerId(customers.get(random.nextInt(customers.size())).getId())
-						.status(Math.random()>0.5? OrderStatus.PENDING:OrderStatus.CREATED)
+						.status(Math.random()>0.5?OrderStatus.PENDING:OrderStatus.CREATED)
 						.createdAt(new Date())
 						.build();
 				Order savedOrder = orderRepository.save(order);

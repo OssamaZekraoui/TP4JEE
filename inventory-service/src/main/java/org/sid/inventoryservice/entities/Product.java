@@ -1,6 +1,5 @@
 package org.sid.inventoryservice.entities;
 
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,12 +9,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data @AllArgsConstructor @NoArgsConstructor @Builder
+
 @Entity
+@Data @NoArgsConstructor @AllArgsConstructor @Builder
 public class Product {
-    @Id() @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private double price;
-    private double quantity;
+    private int quantity;
 }

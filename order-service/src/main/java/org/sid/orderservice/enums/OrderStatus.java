@@ -1,5 +1,5 @@
 package org.sid.orderservice.enums;
 
 public enum OrderStatus {
-    CREATED, PENDING, DELIVERED, CANCELED
+    CREATED,PENDING,DELIVERED,CANCELED
 }

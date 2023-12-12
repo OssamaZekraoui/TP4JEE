@@ -6,20 +6,25 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.validator.constraints.Normalized;
 import org.sid.orderservice.model.Product;
 
 @Entity
-@Data @NoArgsConstructor @AllArgsConstructor @Builder
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class ProductItem {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private Long productId;
-    @Transient
+    @Transient//pour dire que cette attribut n'st pas persistent
     private Product product;
+
     private double price;
+
     private int quantity;
+
     private double discount;
     @ManyToOne
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)

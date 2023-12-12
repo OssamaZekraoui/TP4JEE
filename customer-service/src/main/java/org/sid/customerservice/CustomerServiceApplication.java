@@ -1,7 +1,7 @@
 package org.sid.customerservice;
 
 import org.sid.customerservice.entities.Customer;
-import org.sid.customerservice.repository.CustomerRepository;
+import org.sid.customerservice.repo.CustomerRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,9 +15,8 @@ public class CustomerServiceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CustomerServiceApplication.class, args);
 	}
-
 	@Bean
-	CommandLineRunner start(CustomerRepository customerRepository) {
+	CommandLineRunner start(CustomerRepository customerRepository){
 		return args -> {
 			customerRepository.saveAll(List.of(
 					Customer.builder().name("Mohamed").email("med@gmail.com").build(),
@@ -27,4 +26,5 @@ public class CustomerServiceApplication {
 			customerRepository.findAll().forEach(System.out::println);
 		};
 	}
+
 }

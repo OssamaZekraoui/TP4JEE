@@ -1,15 +1,16 @@
 package org.sid.inventoryservice;
 
 import org.sid.inventoryservice.entities.Product;
-import org.sid.inventoryservice.repository.ProductRepository;
+import org.sid.inventoryservice.repo.ProductRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+
 import org.springframework.context.annotation.Bean;
-import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 
 import java.util.List;
+import java.util.Random;
 
 @SpringBootApplication
 @EnableDiscoveryClient
@@ -20,22 +21,21 @@ public class InventoryServiceApplication {
 		SpringApplication.run(InventoryServiceApplication.class, args);
 	}
 
-
 	@Bean
-	CommandLineRunner start(ProductRepository productRepository, RepositoryRestConfiguration restConfiguration){
+	CommandLineRunner start(ProductRepository productRepository){
 		return args -> {
-			restConfiguration.exposeIdsFor(Product.class);
-			productRepository.saveAll(
-					List.of(
-							Product.builder().name("Computer").price(1000).quantity(12).build(),
-							Product.builder().name("Printer").price(200).quantity(120).build(),
-							Product.builder().name("Smartphone").price(500).quantity(120).build(),
-							Product.builder().name("Tablet").price(400).quantity(120).build()
-					)
-			);
-			productRepository.findAll().forEach(p->{
-				System.out.println(p.toString());
-			});
+			Random random=new Random();
+			for(int i =1; i<10;i++){
+				productRepository.saveAll(List.of(
+						Product.builder()
+								.name("computer"+i)
+								.price(1200+Math.random()*10000)
+								.quantity(1+random.nextInt(200))
+								.build()
+				));
+			}
+
 		};
 	}
+
 }

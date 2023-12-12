@@ -10,25 +10,34 @@ import org.sid.orderservice.model.Customer;
 
 import java.util.Date;
 import java.util.List;
+
 @Entity
-@Table(name="orders")
-@Data @NoArgsConstructor @AllArgsConstructor @Builder
+@Table(name = "orders")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Date createdAt;
+
     private OrderStatus status;
+
     private Long customerId;
-    @Transient
+    @Transient//pour dire que cette attribut n'st pas persistent
     private Customer customer;
     @OneToMany(mappedBy = "order")
     private List<ProductItem> productItems;
 
     public double getTotal(){
         double somme=0;
-        for(ProductItem pi:productItems){
-            somme+=pi.getAmount();
+        for(ProductItem pi:productItems) {
+
+        somme+=pi.getAmount();
+
         }
         return somme;
     }
