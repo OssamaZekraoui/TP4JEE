@@ -6,6 +6,9 @@
 
 # consul agent -server -bootstrap-expect=1 -data-dir=consul-data -ui -bind=192.168.1.142
 
+![cap1](https://github.com/OssamaZekraoui/TP4JEE/assets/64346410/fa467645-69ed-4cbf-9b98-e1dcc58fdacb)
+
+![cap2](https://github.com/OssamaZekraoui/TP4JEE/assets/64346410/fb6bc5ff-ff9b-4947-92d0-351d95a0a49c)
 
 ![screencapture-localhost-8500-ui-dc1-services-config-server-instances-ZEKRAOUI-config-server-8888-health-checks-2023-12-12-19_01_32](https://github.com/OssamaZekraoui/TP4JEE/assets/64346410/e2543040-bf4f-4c07-ac25-747cc0f3fe38)
 
@@ -15,7 +18,5 @@
 
 ![screencapture-localhost-4200-products-2023-12-12-19_03_07](https://github.com/OssamaZekraoui/TP4JEE/assets/64346410/cf02b709-6d9f-457a-a81c-3d670e87db11)
 
-![cap1](https://github.com/OssamaZekraoui/TP4JEE/assets/64346410/fa467645-69ed-4cbf-9b98-e1dcc58fdacb)
 
-![cap2](https://github.com/OssamaZekraoui/TP4JEE/assets/64346410/fb6bc5ff-ff9b-4947-92d0-351d95a0a49c)
 
